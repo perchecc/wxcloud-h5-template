@@ -14,7 +14,7 @@ export const useUserStore = defineStore({
   },
   getters: {
     getterFullName: (state) => {
-      return state.name + "丰";
+      return `我现在登录的是${state.name}`;
     },
   },
   // 开启数据缓存

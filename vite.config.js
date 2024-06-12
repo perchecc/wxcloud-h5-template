@@ -3,7 +3,9 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import Components from "unplugin-vue-components/vite";
 import { VantResolver } from "unplugin-vue-components/resolvers";
-import postCssPxToRem from "postcss-pxtorem";
+import postcssPxtorem from "postcss-pxtorem";
+import tailwindcss from "tailwindcss";
+import autoprefixer from "autoprefixer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,13 +28,15 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [
-        postCssPxToRem({
+        postcssPxtorem({
           // rootValue: 37.5,
           rootValue({ file }) {
-            return file.indexOf("vant") !== -1 ? 37.5 : 75;
+            return file.indexOf("vant") !== -1 ? 37.5 : 37.5;
           },
           propList: ["*"],
         }),
+        tailwindcss,
+        autoprefixer,
       ],
     },
     // css预处理器
@@ -45,6 +49,7 @@ export default defineConfig({
     },
   },
   server: {
+    host: "0.0.0.0",
     proxy: {
       "/api": {
         target: "http://1.14.96.11:8010", // 接口的域名
