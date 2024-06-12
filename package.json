@@ -1,0 +1,29 @@
+{
+  "name": "vant-v4",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --mode development",
+    "build": "vite build",
+    "build:dev": "vue-tsc --noEmit && vite build --mode development",
+    "build:pro": "vue-tsc --noEmit && vite build --mode production", 
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "amfe-flexible": "^2.2.1",
+    "axios": "^1.4.0",
+    "pinia": "^2.0.35",
+    "pinia-plugin-persist": "^1.0.0",
+    "vant": "^4.2.1",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "postcss-pxtorem": "^6.0.0",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^3.2.4"
+  }
+}
